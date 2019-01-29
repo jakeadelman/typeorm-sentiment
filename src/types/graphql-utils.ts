@@ -6,7 +6,7 @@ export interface ResolverMap {
     [key: string]: (
       parent: any,
       args: any,
-      context: { redis: Redis; url: string; session: Session },
+      context: { redis: Redis; url: string; session: Session; response: any },
       info: any
     ) => any;
   };

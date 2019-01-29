@@ -1,6 +1,7 @@
 import { GQL } from "../types/schema";
 import { ResolverMap } from "../types/graphql-utils";
 import { User } from "../entities/User";
+// import { isContext } from "vm";
 
 const loginResolver: ResolverMap = {
   Mutation: {
@@ -31,7 +32,10 @@ const loginResolver: ResolverMap = {
 
       //login successful
 
-      (session as any).userId = user.id;
+      session.userId = user.id.toString();
+      if (session.userId) {
+        console.log(session.userId);
+      }
 
       return null;
     }
