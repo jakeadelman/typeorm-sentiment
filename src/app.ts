@@ -28,7 +28,7 @@ createConnection().then(connection => {
   const corsOptions = {
     credentials: true,
     // origin: false
-    origin: "http://localhost:3000"
+    origin: "http://142.112.184.234"
   };
 
   server.express.use(cors(corsOptions));
